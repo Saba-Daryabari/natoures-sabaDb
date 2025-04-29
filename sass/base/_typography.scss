@@ -1,0 +1,66 @@
+
+@use '../abstracts/variables' as vars;
+
+body{
+    font-family: 'Lato',sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: vars.$color-gray-dark;
+    padding: 3rem;
+}
+.heading-primary{
+    display: block;
+    color: vars.$color-white;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+
+    &--main{
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+    }
+    &--sub{
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.75rem;
+    }
+    
+
+}
+
+.heading-secondary{
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    background-image: linear-gradient(to right, vars.$color-primary-light, vars.$color-primary-dark);
+    -webkit-background-clip: text;
+    color: transparent;
+    transition: all 0.2s;
+
+    &:hover{
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: 0.5rem 1rem 2rem rgba(vars.$color-black,0.2);
+    }
+}
+
+.heading-tertiary{
+    font-size: vars.$default-font-size;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: vars.$color-black;
+}
+.paragraph{
+    
+    font-size: vars.$default-font-size;
+    color: vars.$color-gray-dark;
+
+
+    &:not(:last-child){
+        margin-bottom: 3rem;
+    }
+}

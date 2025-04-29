@@ -1,5 +1,6 @@
 
 @use '../abstracts/variables' as vars;
+@use '../abstracts/mixins' as mix;
 
 body{
     font-family: 'Lato',sans-serif;
@@ -7,7 +8,7 @@ body{
     font-size: 1.6rem;
     line-height: 1.7;
     color: vars.$color-gray-dark;
-    padding: 3rem;
+
 }
 .heading-primary{
     display: block;
@@ -16,17 +17,29 @@ body{
     backface-visibility: hidden;
     margin-bottom: 6rem;
 
+
+    
     &--main{
         display: block;
         font-size: 6rem;
         font-weight: 400;
         letter-spacing: 3.5rem;
+
+        @include mix.respond(phone){
+            letter-spacing: 1rem;
+            font-size: 5rem;
+        }
     }
     &--sub{
         display: block;
         font-size: 2rem;
         font-weight: 700;
         letter-spacing: 1.75rem;
+
+        @include mix.respond(phone){
+            letter-spacing: 0.5rem;
+            
+        }
     }
     
 
@@ -41,6 +54,17 @@ body{
     -webkit-background-clip: text;
     color: transparent;
     transition: all 0.2s;
+
+
+    
+    @include mix.respond(tab-port){
+        font-size: 3rem;
+    }
+
+    
+    @include mix.respond(phone){
+        font-size: 2.5rem;
+    }
 
     &:hover{
         transform: skewY(2deg) skewX(15deg) scale(1.1);

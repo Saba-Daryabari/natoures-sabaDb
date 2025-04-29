@@ -6,6 +6,17 @@
 
     &:not(:last-child){
         margin-bottom: vars.$gutter-vertical;
+
+        @include mix.respond(tab-port){
+            
+            margin-bottom: vars.$gutter-vertical-small;
+        }
+        
+    }
+    @include mix.respond(tab-port){
+            
+       max-width: 50rem;
+       padding: 0 3rem
     }
 
     @include mix.clearfix;
@@ -16,6 +27,13 @@
 
         &:not(:last-child){
             margin-right: vars.$gutter-horizontal;
+        }
+
+        @include mix.respond(tab-port){
+            width: 100% !important;
+            margin-right: 0;
+            margin-bottom: vars.$gutter-vertical-small;
+
         }
         
     }

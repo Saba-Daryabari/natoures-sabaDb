@@ -4,13 +4,21 @@
   "description": "a olanding page for natures",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "sass sass/main.scss css/style.css -w"
+    "whatch:sass": "sass sass/main.scss css/style.css -w",
+    "compile:sass": "sass sass/main.scss css/style.comp.css ",
+    "concat:css": "npx concat-cli -f css/icon-font.css css/style.comp.css -o css/style.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.css -o css/style.prefix.css"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "concat-cli": "^4.0.0",
+    "postcss-cli": "^11.0.1",
     "sass": "^1.87.0",
     "sass-embedded": "^1.87.0"
+  },
+  "dependencies": {
+    "concat": "^1.0.3"
   }
 }
- 
